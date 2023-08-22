@@ -1,6 +1,7 @@
 import React from "react";
 import { ChevronDown } from "lucide-react";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { Pie  } from 'react-chartjs-2';
+import {Chart, ArcElement} from 'chart.js'
 import Schedule from "./Schedule";
 
 const data01 = [
@@ -14,10 +15,18 @@ const data01 = [
   { name: "Super Hoodies", value: 14, color: "bg-red-400", colors: "red" },
 ];
 
-function PieChartDash() {
-  const colorfamily = ["#4caf50", "#ffd700", "#f06292"];
+const data = {
+  labels: ['Basic Tees', 'Custom Short Pants', 'Super Hoodies'],
+  datasets: [
+    {
+      data: [55, 31, 14], // Your data values
+      backgroundColor:  ["#4caf50", "#ffd700", "#f06292"], // Custom colors for each section
+    },
+  ],
+};
 
-  // const color = ['#8884d8', '#83a6ed', '#8dd1e1', '#82ca9d', '#a4de6c'];
+function PieChartDash() {
+  Chart.register(ArcElement);
 
   return (
     <>
@@ -34,7 +43,7 @@ function PieChartDash() {
 
         <div className="flex mt-6 ">
           <div className="w-1/2">
-            <ResponsiveContainer className="w-full h-48  ">
+            {/* <ResponsiveContainer className="w-full h-48  ">
               <PieChart width={400} height={400} style={{ rotate: "284deg" }}>
                 <Pie
                   dataKey="value"
@@ -51,7 +60,8 @@ function PieChartDash() {
                   />
                 ))}
               </PieChart>
-            </ResponsiveContainer>
+            </ResponsiveContainer> */}
+            <Pie data={data} />;
           </div>
 
           <div className="w-1/2 ml-8 ">
@@ -77,7 +87,7 @@ function PieChartDash() {
         </div>
       </div>
 
-      <div className="bg-white w-1/2 rounded-2xl  p-6 sechecule-box">
+      <div className="bg-white w-1/2 rounded-2xl  p-6">
         <Schedule />
       </div>
     </>
