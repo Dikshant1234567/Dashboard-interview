@@ -7,6 +7,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.dash-conatiner{
+  margin-left: 20%;
+}
 
 @media (max-width: 654px) {
   .login-container {
@@ -58,11 +61,27 @@
   .pie-container{
     display: block;
   }
-  /* .pie-box{
+  .pie-box{
     width: 100%;
-  } */
-  .pie-container div{
-    display: block;
+    margin: 2rem 0;
+  }
+  .pie-box div:nth-child(2){
+    flex-direction: column;
+  }
+  .pie-box div:nth-child(2) div{
     width: 100%;
+  }
+  .sechecule-box{
+    width: 100%;
+  }
+
+}
+@media (max-width: 1300px) {
+  .nav-container{
+   display: none;
+  }
+  .dash-conatiner{
+    width: 100%;
+    margin-left: 0;
   }
 }
