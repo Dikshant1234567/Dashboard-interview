@@ -43,24 +43,7 @@ function PieChartDash() {
 
         <div className="flex mt-6 ">
           <div className="w-1/2">
-            {/* <ResponsiveContainer className="w-full h-48  ">
-              <PieChart width={400} height={400} style={{ rotate: "284deg" }}>
-                <Pie
-                  dataKey="value"
-                  isAnimationActive={true}
-                  data={data01}
-                  cx="50%"
-                  cy="50%"
-                  fill="#daa520"
-                />
-                 { data01 && data01.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={colorfamily[index]}
-                  />
-                ))}
-              </PieChart>
-            </ResponsiveContainer> */}
+           
             <Pie data={data} />;
           </div>
 
