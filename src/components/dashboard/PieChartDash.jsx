@@ -70,7 +70,7 @@ function PieChartDash() {
         </div>
       </div>
 
-      <div className="bg-white w-1/2 rounded-2xl  p-6">
+      <div className="bg-white sm:w-1/2 rounded-2xl w-full  p-6">
         <Schedule />
       </div>
     </>
